@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv');
+const mongoose = require('mongoose');
 const connectDB = require('./config/db');
 
 // Load environment variables (reloaded for MongoDB Atlas)
@@ -91,7 +92,8 @@ if (process.env.NODE_ENV !== 'test') {
       console.log(`=========================================`);
       console.log(`   RideSync Server is running on port ${PORT}`);
       console.log(`   Health check: http://localhost:${PORT}/api/health`);
-      console.log(`   MongoDB: ${process.env.MONGODB_URI || 'Connected'}`);
+      console.log(`   Database: ${mongoose.connection.name}`);
+      console.log(`   MongoDB Atlas: Connected`);
       console.log(`=========================================`);
     });
   });
