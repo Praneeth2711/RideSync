@@ -1,0 +1,33 @@
+{
+  "name": "ridesync",
+  "version": "1.0.0",
+  "description": "RideSync - Minimalist Carpool & Ride Sharing Board (MERN Full-Stack)",
+  "private": true,
+  "scripts": {
+    "install:server": "cd server && npm install",
+    "install:client": "cd client && npm install",
+    "install:all": "npm install && npm run install:server && npm run install:client",
+    "server": "npm --prefix server run dev",
+    "client": "npm --prefix client run dev",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"black.bold,blue.bold\" \"npm run server\" \"npm run client\"",
+    "start": "npm --prefix server start",
+    "build:client": "npm --prefix client run build",
+    "seed": "npm --prefix server run seed",
+    "test": "npm --prefix server test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "keywords": [
+    "ridesync",
+    "carpool",
+    "ride-sharing",
+    "mern",
+    "geoapify",
+    "leaflet",
+    "express",
+    "mongodb"
+  ],
+  "author": "RideSync Team",
+  "license": "ISC"
+}
